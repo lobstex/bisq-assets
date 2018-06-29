@@ -18,22 +18,27 @@
 package bisq.asset.coins;
 
 import bisq.asset.AbstractAssetTest;
+
 import org.junit.Test;
 
 public class LobstexCoinTest extends AbstractAssetTest {
+    
     public LobstexCoinTest() {
         super(new LobstexCoin());
     }
 
     @Test
     public void testValidAddresses() {
-        assertValidAddress("5252370ec3a7e63b3b2fca49ab6a9dea58a6deaf9ecd1a715c2e04517df2cc43");
-        assertValidAddress("1MEbUJ5v5MdDEqFJGz4SZp58KkaLdmXZ85");
-        assertValidAddress("34dvotXMg5Gxc37TBVV2e5GUAfCFu7Ms4g");
+        assertValidAddress("LbfvBwhBKK9EUnBEzCa4spT6RgEKXj3RoR");
+        assertValidAddress("LMMLeypCrMzxytAUfTBpLDQ98eRx7hXRgD");
+        assertValidAddress("LeGSV3RRb7zULou9XGZsUUGLLk3gPi41aV");
     }
 
     @Test
     public void testInvalidAddresses() {
-        assertInvalidAddress("");
+        assertInvalidAddress("LbfvBwhBKK9EUnBEzCa4spT6RgEKXj3RoRX");
+        assertInvalidAddress("LbfvBwhBKK9EUnBEzCa4spT6RgEKXj3Ro");
+        assertInvalidAddress("LbfvBwhBKK9EUnBEzCa4spT6RgEKXj3Ro#");
+        assertInvalidAddress("ObfvBwhBKK9EUnBEzCa4spT6RgEKXj3RoR");
     }
 }

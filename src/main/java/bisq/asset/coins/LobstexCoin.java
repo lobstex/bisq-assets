@@ -17,17 +17,12 @@
 
 package bisq.asset.coins;
 
-import bisq.asset.AddressValidationResult;
-import bisq.asset.Base58BitcoinAddressValidator;
 import bisq.asset.Coin;
-import bisq.asset.DefaultAddressValidator;
-import org.bitcoinj.core.NetworkParameters;
-import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.RegTestParams;
-import org.bitcoinj.params.TestNet3Params;
+import bisq.asset.RegexAddressValidator;
 
 public class LobstexCoin extends Coin {
+    
     public LobstexCoin() {
-        super("Lobstex", "LOBS", new DefaultAddressValidator());
+        super("Lobstex", "LOBS", new RegexAddressValidator("^L[1-9A-Za-z]{26,33}$"));
     }
 }
